@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>라임손해사정사 | 보험금은 받아야 제맛</title>
+<link href="https://fonts.googleapis.com/css2?family=Gmarket+Sans:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --lime: #c8f135;
+  --lime-dark: #a8d420;
+  --dark: #111411;
+  --dark2: #181c17;
+  --card: #1e231d;
+  --border: rgba(200,241,53,0.12);
+  --text: #eef2e8;
+  --muted: #7d8c72;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--dark);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(17,20,17,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Gmarket Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--lime);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.logo em { color: var(--white); font-style: normal; }
+
+nav { display: flex; align-items: center; gap: 36px; }
+
+nav a {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--lime); }
+
+.header-cta {
+  background: var(--lime);
+  color: var(--dark);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 22px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.header-cta:hover { background: #d4f560; }
+
+/* ─── HERO ─── */
+.hero {
+  padding-top: 64px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 80px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(200,241,53,0.1);
+  border: 1px solid rgba(200,241,53,0.25);
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 5px 14px;
+  border-radius: 4px;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+
+.hero-h1 {
+  font-family: 'Gmarket Sans', sans-serif;
+  font-size: clamp(34px, 4.5vw, 58px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.hero-h1 .lime { color: var(--lime); }
+
+.hero-sub {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 48px;
+  max-width: 440px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+}
+
+.action-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  text-decoration: none;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.action-card:hover {
+  border-color: rgba(200,241,53,0.4);
+  background: rgba(200,241,53,0.05);
+  transform: translateX(6px);
+}
+
+.action-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: rgba(200,241,53,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.action-text { flex: 1; }
+.action-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.action-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.action-arrow { color: var(--lime); font-size: 20px; flex-shrink: 0; }
+
+.hero-right {
+  background: var(--dark2);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
+  position: relative;
+}
+
+.hero-right::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(200,241,53,0.06) 0%, transparent 70%);
+}
+
+.stats-label {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.stat-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.stat-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+.stat-left { display: flex; flex-direction: column; gap: 6px; }
+.stat-num {
+  font-family: 'Gmarket Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--lime);
+  line-height: 1;
+}
+.stat-name { font-size: 13px; color: var(--muted); }
+.stat-bar-wrap { width: 160px; }
+.stat-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.stat-bar-fill {
+  height: 100%;
+  background: var(--lime);
+  border-radius: 100px;
+  animation: fillBar 1.5s ease both;
+}
+@keyframes fillBar {
+  from { width: 0 !important; }
+}
+
+/* ─── WHY SECTION ─── */
+.why-section {
+  padding: 120px 80px;
+  background: var(--dark2);
+}
+
+.why-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--lime);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-h2 {
+  font-family: 'Gmarket Sans', sans-serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 64px;
+}
+
+.why-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.why-step {
+  background: var(--card);
+  padding: 48px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.why-step:first-child { border-radius: 20px 0 0 20px; }
+.why-step:last-child { border-radius: 0 20px 20px 0; }
+.why-step:hover { background: #232820; }
+
+.why-step::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.why-step:hover::after { transform: scaleX(1); }
+
+.step-num {
+  font-family: 'Gmarket Sans', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: rgba(200,241,53,0.12);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.step-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ─── ACCIDENT ─── */
+.accident-section { padding: 120px 80px; }
+.accident-inner { max-width: 1200px; margin: 0 auto; }
+
+.accident-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  transition: all 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: rgba(200,241,53,0.12);
+  border-color: rgba(200,241,53,0.4);
+  color: var(--lime);
+}
+
+.accident-content { display: none; }
+.accident-content.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+.accident-info { }
+
+.accident-title {
+  font-family: 'Gmarket Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.accident-desc-text {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.accident-points { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+
+.point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.point-item::before {
+  content: '✓';
+  color: var(--lime);
+  font-weight: 800;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.accident-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--lime);
+  color: var(--dark);
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.accident-cta:hover { background: #d4f560; transform: translateY(-2px); }
+
+.accident-visual {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+}
+
+.case-title { font-size: 12px; color: var(--muted); letter-spacing: 1px; font-weight: 700; margin-bottom: 20px; }
+
+.case-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.case-item:last-child { border-bottom: none; }
+.case-name { font-size: 14px; color: var(--text); }
+.case-amount { font-size: 16px; font-weight: 800; color: var(--lime); }
+
+/* ─── REVIEW ─── */
+.review-section {
+  padding: 120px 80px;
+  background: var(--dark2);
+}
+
+.review-inner { max-width: 1200px; margin: 0 auto; }
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.25s;
+}
+
+.review-card:hover {
+  border-color: rgba(200,241,53,0.3);
+  transform: translateY(-4px);
+}
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.review-badge {
+  background: rgba(200,241,53,0.15);
+  color: var(--lime);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.review-stars { color: var(--lime); font-size: 13px; letter-spacing: 1px; }
+
+.review-body {
+  font-size: 14px;
+  color: rgba(238,242,232,0.8);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.review-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewer { font-size: 13px; color: var(--muted); }
+.reviewer strong { color: var(--text); display: block; margin-bottom: 2px; }
+.review-gain { font-size: 18px; font-weight: 900; color: var(--lime); }
+
+/* ─── FAQ ─── */
+.faq-section { padding: 120px 80px; }
+.faq-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.faq-left { position: sticky; top: 100px; }
+
+.faq-list { display: flex; flex-direction: column; gap: 8px; }
+
+.faq-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.faq-item.open { border-color: rgba(200,241,53,0.35); }
+
+.faq-q {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.faq-q-num {
+  width: 26px; height: 26px;
+  background: rgba(200,241,53,0.12);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--lime);
+  flex-shrink: 0;
+}
+
+.faq-q span { flex: 1; }
+
+.faq-chevron {
+  color: var(--muted);
+  font-size: 20px;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-chevron { transform: rotate(45deg); color: var(--lime); }
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-a-inner {
+  padding: 0 22px 20px 62px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ─── CTA BANNER ─── */
+.cta-banner {
+  margin: 0 80px 80px;
+  background: var(--lime);
+  border-radius: 24px;
+  padding: 64px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-text h2 {
+  font-family: 'Gmarket Sans', sans-serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.cta-text p {
+  font-size: 15px;
+  color: rgba(17,20,17,0.65);
+}
+
+.cta-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--dark);
+  color: var(--lime);
+  border-radius: 14px;
+  padding: 18px 36px;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.cta-btn-dark:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 56px 80px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-logo-txt {
+  font-family: 'Gmarket Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lime);
+  margin-bottom: 12px;
+}
+
+.footer-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.footer-links-group { display: flex; flex-direction: column; gap: 10px; }
+
+.footer-links-group a {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links-group a:hover { color: var(--lime); }
+
+.footer-kakao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FEE500;
+  color: #3A1D1D;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 16px;
+  transition: all 0.2s;
+}
+
+.footer-kakao:hover { filter: brightness(1.05); }
+
+/* ─── MOBILE ─── */
+@media (max-width: 900px) {
+  header { padding: 0 20px; }
+  nav { display: none; }
+
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 40px 24px; }
+  .hero-right { display: none; }
+
+  .why-section, .accident-section, .review-section, .faq-section { padding: 80px 24px; }
+  .why-steps { grid-template-columns: 1fr; gap: 12px; }
+  .why-step { border-radius: 16px !important; }
+  .accident-content.active { grid-template-columns: 1fr; }
+  .review-grid { grid-template-columns: 1fr; }
+  .faq-inner { grid-template-columns: 1fr; gap: 40px; }
+  .faq-left { position: static; }
+  .cta-banner { margin: 0 24px 48px; padding: 40px 28px; flex-direction: column; }
+  footer { padding: 48px 24px; }
+}
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+.reveal.on { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">라임<em>손해사정사</em></a>
+  <nav>
+    <a href="#why">왜 필요한가</a>
+    <a href="#accident">사고유형</a>
+    <a href="#review">후기</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="header-cta" href="https://homjts-beep.github.io/-111/" target="_blank">무료 진단 시작</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">⚡ 독립 손해사정사 · 보험금 전문</div>
+    <h1 class="hero-h1">
+      보험금,<br>
+      <span class="lime">혼자 받으면</span><br>
+      손해입니다
+    </h1>
+    <p class="hero-sub">
+      척추·골절·핀 고정 수술 후 보험금,<br>
+      보험사 기준으로만 받으셨나요?<br>
+      라임이 놓친 금액까지 찾아드립니다.
+    </p>
+    <div class="hero-actions">
+      <a class="action-card" href="https://homjts-beep.github.io/-111/" target="_blank">
+        <div class="action-icon">🔍</div>
+        <div class="action-text">
+          <div class="action-title">30초 무료 진단받기</div>
+          <div class="action-desc">부위 선택만 하면 예상 보험금 즉시 확인</div>
+        </div>
+        <div class="action-arrow">→</div>
+      </a>
+
+      <button class="action-card" onclick="mOpen('ov1')" style="background:var(--card);border:1px solid var(--border);font-family:'Noto Sans KR',sans-serif;color:var(--text);cursor:pointer;">
+        <div class="action-icon" style="background:rgba(200,241,53,0.15)">🚗</div>
+        <div class="action-text">
+          <div class="action-title">30초 교통사고 무료 진단</div>
+          <div class="action-desc">사고 유형 선택만으로 예상 합의금·과실 즉시 확인</div>
+        </div>
+        <div class="action-arrow">→</div>
+      </button>
+
+      <a class="action-card" href="http://pf.kakao.com/_QImIX/chat" target="_blank">
+        <div class="action-icon">💬</div>
+        <div class="action-text">
+          <div class="action-title">카카오로 바로 상담</div>
+          <div class="action-desc">진단서·보험 문자 사진으로 빠른 검토 가능</div>
+        </div>
+        <div class="action-arrow">→</div>
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-label">LIME 누적 실적</div>
+    <div class="stat-row">
+      <div class="stat-block">
+        <div class="stat-left">
+          <div class="stat-num">2,300<small style="font-size:24px">건</small></div>
+          <div class="stat-name">누적 상담 건수</div>
+        </div>
+        <div class="stat-bar-wrap">
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:92%"></div></div>
+        </div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-left">
+          <div class="stat-num">98<small style="font-size:24px">%</small></div>
+          <div class="stat-name">고객 만족도</div>
+        </div>
+        <div class="stat-bar-wrap">
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:98%"></div></div>
+        </div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-left">
+          <div class="stat-num">0<small style="font-size:24px">원</small></div>
+          <div class="stat-name">착수금 · 선납금</div>
+        </div>
+        <div class="stat-bar-wrap">
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:100%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY -->
+<section class="why-section" id="why">
+  <div class="why-inner">
+    <div class="reveal">
+      <div class="section-tag">WHY LIME</div>
+      <h2 class="section-h2">보험금 판단,<br>꼭 알아야 할 구조</h2>
+    </div>
+    <div class="why-steps reveal">
+      <div class="why-step">
+        <div class="step-num">01</div>
+        <div class="step-title">보험금은 약관 해석에 따라<br>천차만별입니다</div>
+        <div class="step-desc">같은 사고라도 어떻게 청구하느냐에 따라 수백만 원에서 수천만 원 차이가 날 수 있습니다. 보험사는 절대 이것을 알려주지 않습니다.</div>
+      </div>
+      <div class="why-step">
+        <div class="step-num">02</div>
+        <div class="step-title">보험사 손해사정사는<br>보험사 편입니다</div>
+        <div class="step-desc">보험사 소속 손해사정사는 보험사의 기준에 따라 사고를 검토합니다. 독립 손해사정사인 라임은 오직 소비자 편에서만 움직입니다.</div>
+      </div>
+      <div class="why-step">
+        <div class="step-num">03</div>
+        <div class="step-title">독립 손해사정사 선임은<br>소비자의 권리입니다</div>
+        <div class="step-desc">법적으로 보장된 권리입니다. 보험사는 이를 거부하거나 불이익을 줄 수 없습니다. 무료로도 선임이 가능하며, 지금 바로 확인할 수 있습니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCIDENT -->
+<section class="accident-section" id="accident">
+  <div class="accident-inner">
+    <div class="reveal">
+      <div class="section-tag">ACCIDENT TYPES</div>
+      <h2 class="section-h2">사고 유형별<br>전문 대응</h2>
+    </div>
+    <div class="accident-tabs reveal">
+      <button class="tab-btn active" onclick="showTab('spine', this)">🦴 척추/허리</button>
+      <button class="tab-btn" onclick="showTab('pin', this)">📌 핀 고정</button>
+      <button class="tab-btn" onclick="showTab('joint', this)">🦵 관절/어깨</button>
+      <button class="tab-btn" onclick="showTab('traffic', this)">🚗 교통사고</button>
+      <button class="tab-btn" onclick="showTab('actual', this)">🏥 실손/입원</button>
+    </div>
+
+    <div id="tab-spine" class="accident-content active reveal">
+      <div class="accident-info">
+        <div class="accident-title">척추 압박골절,<br>압박률이 핵심입니다</div>
+        <div class="accident-desc-text">척추 관련 후유장해는 압박률(%)에 따라 보험금이 크게 달라집니다. 많은 분들이 압박률 20% 미만으로 처리되어 보험금을 적게 받습니다.</div>
+        <div class="accident-points">
+          <div class="point-item">압박률 40% 이상 시 최고등급 후유장해 적용</div>
+          <div class="point-item">디스크 수술·유합술 수술비 별도 청구 가능</div>
+          <div class="point-item">경추(목) 손상도 동일 기준 적용</div>
+          <div class="point-item">이미 받은 보험금 외 추가 청구 가능 여부 검토</div>
+        </div>
+        <a class="accident-cta" href="https://homjts-beep.github.io/-111/" target="_blank">척추 보험금 진단받기 →</a>
+      </div>
+      <div class="accident-visual">
+        <div class="case-title">최근 척추 지급 사례</div>
+        <div class="case-item"><span class="case-name">60대 남성 · 압박률 43% · 유합술</span><span class="case-amount">4,200만원</span></div>
+        <div class="case-item"><span class="case-name">50대 여성 · 압박률 28% · 보존치료</span><span class="case-amount">1,450만원</span></div>
+        <div class="case-item"><span class="case-name">40대 남성 · 경추 손상 · 수술</span><span class="case-amount">2,100만원</span></div>
+        <div class="case-item"><span class="case-name">70대 여성 · 다발성 압박골절</span><span class="case-amount">5,800만원</span></div>
+      </div>
+    </div>
+
+    <div id="tab-pin" class="accident-content reveal">
+      <div class="accident-info">
+        <div class="accident-title">핀이 몸 안에 있다면<br>별도 항목이 있습니다</div>
+        <div class="accident-desc-text">금속 내고정물(핀·나사)이 체내에 잔존하는 경우 별도의 후유장해 항목이 적용됩니다. 이 사실을 모르고 지나치는 분들이 매우 많습니다.</div>
+        <div class="accident-points">
+          <div class="point-item">체내 금속 잔존 시 후유장해 별도 인정</div>
+          <div class="point-item">다발성 골절(2곳 이상)은 중복 청구 가능</div>
+          <div class="point-item">제거 수술 비용도 청구 가능</div>
+          <div class="point-item">골절 부위별 개별 산정 가능</div>
+        </div>
+        <a class="accident-cta" href="https://homjts-beep.github.io/-111/" target="_blank">핀 고정 보험금 진단받기 →</a>
+      </div>
+      <div class="accident-visual">
+        <div class="case-title">최근 핀 고정 지급 사례</div>
+        <div class="case-item"><span class="case-name">50대 남성 · 대퇴골 골절 · 핀 잔존</span><span class="case-amount">1,850만원</span></div>
+        <div class="case-item"><span class="case-name">40대 여성 · 다발성 골절 3곳</span><span class="case-amount">3,200만원</span></div>
+        <div class="case-item"><span class="case-name">60대 남성 · 발목 골절 · 나사 잔존</span><span class="case-amount">890만원</span></div>
+        <div class="case-item"><span class="case-name">30대 여성 · 손목 골절 · 복합 청구</span><span class="case-amount">720만원</span></div>
+      </div>
+    </div>
+
+    <div id="tab-joint" class="accident-content reveal">
+      <div class="accident-info">
+        <div class="accident-title">관절 손상,<br>가동범위로 결정됩니다</div>
+        <div class="accident-desc-text">어깨·무릎·고관절 손상은 가동범위 측정 결과에 따라 보험금이 산정됩니다. 정확한 측정과 청구 전략이 중요합니다.</div>
+        <div class="accident-points">
+          <div class="point-item">회전근개 파열·인대 파열 수술비 청구</div>
+          <div class="point-item">반월판 손상·연골 손상 후유장해</div>
+          <div class="point-item">관절내시경 수술비 실손 청구</div>
+          <div class="point-item">인공관절 치환술 고액 청구 가능</div>
+        </div>
+        <a class="accident-cta" href="https://homjts-beep.github.io/-111/" target="_blank">관절 보험금 진단받기 →</a>
+      </div>
+      <div class="accident-visual">
+        <div class="case-title">최근 관절 지급 사례</div>
+        <div class="case-item"><span class="case-name">60대 여성 · 인공관절 치환술</span><span class="case-amount">3,500만원</span></div>
+        <div class="case-item"><span class="case-name">40대 남성 · 회전근개 전층 파열</span><span class="case-amount">1,200만원</span></div>
+        <div class="case-item"><span class="case-name">50대 여성 · 반월판 손상 수술</span><span class="case-amount">680만원</span></div>
+        <div class="case-item"><span class="case-name">30대 남성 · 전방십자인대 파열</span><span class="case-amount">540만원</span></div>
+      </div>
+    </div>
+
+    <div id="tab-traffic" class="accident-content reveal">
+      <div class="accident-info">
+        <div class="accident-title">교통사고,<br>여러 보험을 동시에 청구하세요</div>
+        <div class="accident-desc-text">교통사고는 자동차보험·실손보험·상해보험 등 여러 보험에서 중복 청구가 가능합니다. 하나만 청구하고 끝내면 손해입니다.</div>
+        <div class="accident-points">
+          <div class="point-item">자동차보험 + 실손 + 상해보험 복합 청구</div>
+          <div class="point-item">후유장해 등급에 따른 장해보험금 청구</div>
+          <div class="point-item">합의 전 전문가 검토 필수</div>
+          <div class="point-item">뺑소니·무보험 차량 정부 보장사업 활용</div>
+        </div>
+        <a class="accident-cta" href="https://homjts-beep.github.io/-111/" target="_blank">교통사고 진단받기 →</a>
+      </div>
+      <div class="accident-visual">
+        <div class="case-title">최근 교통사고 지급 사례</div>
+        <div class="case-item"><span class="case-name">50대 남성 · 복합 보험 청구</span><span class="case-amount">2,800만원</span></div>
+        <div class="case-item"><span class="case-name">40대 여성 · 후유장해 + 실손</span><span class="case-amount">1,650만원</span></div>
+        <div class="case-item"><span class="case-name">30대 남성 · 합의 전 검토</span><span class="case-amount">890만원</span></div>
+        <div class="case-item"><span class="case-name">60대 여성 · 무보험 차량 사고</span><span class="case-amount">1,100만원</span></div>
+      </div>
+    </div>
+
+    <div id="tab-actual" class="accident-content reveal">
+      <div class="accident-info">
+        <div class="accident-title">실손·입원비,<br>놓친 항목이 있습니다</div>
+        <div class="accident-desc-text">실손보험 청구는 단순해 보이지만, 비급여 항목·선택진료비·간병비 등 놓치기 쉬운 항목이 많습니다.</div>
+        <div class="accident-points">
+          <div class="point-item">비급여 치료비 실손 청구 범위 확인</div>
+          <div class="point-item">도수치료·체외충격파 보장 여부</div>
+          <div class="point-item">입원 일당·수술비 중복 청구</div>
+          <div class="point-item">암·뇌·심장 진단비 청구 검토</div>
+        </div>
+        <a class="accident-cta" href="https://homjts-beep.github.io/-111/" target="_blank">실손 보험금 진단받기 →</a>
+      </div>
+      <div class="accident-visual">
+        <div class="case-title">최근 실손 지급 사례</div>
+        <div class="case-item"><span class="case-name">40대 남성 · 장기 입원 실손</span><span class="case-amount">480만원</span></div>
+        <div class="case-item"><span class="case-name">50대 여성 · 도수치료 비급여</span><span class="case-amount">320만원</span></div>
+        <div class="case-item"><span class="case-name">60대 남성 · 암 진단비</span><span class="case-amount">5,000만원</span></div>
+        <div class="case-item"><span class="case-name">30대 여성 · 수술비 복합</span><span class="case-amount">280만원</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW -->
+<section class="review-section" id="review">
+  <div class="review-inner">
+    <div class="review-header reveal">
+      <div>
+        <div class="section-tag">CUSTOMER REVIEWS</div>
+        <h2 class="section-h2">실제 수령 후기</h2>
+      </div>
+      <a href="https://homjts-beep.github.io/-111/" target="_blank" style="color:var(--lime); font-size:14px; font-weight:700; text-decoration:none;">전체 후기 보기 →</a>
+    </div>
+    <div class="review-grid">
+      <div class="review-card reveal">
+        <div class="review-top">
+          <span class="review-badge">척추 압박골절</span>
+          <span class="review-stars">★★★★★</span>
+        </div>
+        <div class="review-body">혼자 청구했을 때 보험사가 300만원만 준다고 했어요. 라임을 통해 압박률을 다시 산정받았더니 2,100만원을 추가로 받았습니다. 이런 항목이 있는 줄 몰랐어요.</div>
+        <div class="review-foot">
+          <div class="reviewer"><strong>김○○ (58세, 남)</strong>요추 압박골절</div>
+          <div class="review-gain">+2,100만</div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-top">
+          <span class="review-badge">핀 고정 수술</span>
+          <span class="review-stars">★★★★★</span>
+        </div>
+        <div class="review-body">핀이 몸 안에 남아있는 게 보험금 항목인 줄 전혀 몰랐어요. 라임 덕분에 1,500만원을 받았고 착수금도 없었습니다. 정말 감사합니다.</div>
+        <div class="review-foot">
+          <div class="reviewer"><strong>이○○ (45세, 여)</strong>대퇴골 골절</div>
+          <div class="review-gain">+1,500만</div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-top">
+          <span class="review-badge">교통사고</span>
+          <span class="review-stars">★★★★★</span>
+        </div>
+        <div class="review-body">보험사에서 합의 제시 금액이 너무 낮아 상담받았어요. 자동차보험·실손·상해보험 세 곳 복합 청구로 원래 제시금액의 3배 이상 받았습니다.</div>
+        <div class="review-foot">
+          <div class="reviewer"><strong>박○○ (52세, 남)</strong>교통사고 후유장해</div>
+          <div class="review-gain">+2,800만</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-left reveal">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-h2" style="font-size:clamp(24px,2.5vw,36px)">자주 묻는<br>질문</h2>
+      <p style="font-size:14px; color:var(--muted); line-height:1.8; margin-top:16px;">더 궁금한 점은<br>카카오로 문의해주세요.</p>
+      <a href="http://pf.kakao.com/_QImIX/chat" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:#FEE500; color:#3A1D1D; border-radius:10px; padding:12px 22px; font-size:14px; font-weight:700; text-decoration:none; margin-top:24px;">💬 카카오 상담</a>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-num">Q</div><span>정말 무료인가요? 숨겨진 비용이 있나요?</span><div class="faq-chevron">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">상담과 진단은 완전 무료이며 착수금·선납금이 없습니다. 성공보수 방식으로 진행되어 보험금을 수령하지 못하면 비용이 발생하지 않습니다. 진행 전 모든 비용 구조를 투명하게 안내드립니다.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-num">Q</div><span>이미 보험금을 받았는데 추가 청구가 가능한가요?</span><div class="faq-chevron">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">네, 가능합니다. 이미 수령한 보험금 외에 놓친 항목(후유장해, 핀 잔존, 압박률 재산정 등)이 있다면 추가 청구가 가능합니다. 시효(통상 3년)가 지나지 않은 경우 재청구도 도와드립니다.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-num">Q</div><span>손해사정사를 선임하면 보험사와 관계가 나빠지지 않나요?</span><div class="faq-chevron">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">전혀 그렇지 않습니다. 독립 손해사정사 선임은 보험업법이 보장하는 소비자의 법적 권리입니다. 보험사는 이를 이유로 불이익을 줄 수 없으며, 오히려 전문가 개입 시 보험사도 더 신중하게 처리합니다.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-num">Q</div><span>얼마나 빠르게 결과를 받을 수 있나요?</span><div class="faq-chevron">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">사안에 따라 다르지만 일반적으로 초기 상담 후 1~3주 내에 결과가 나옵니다. 고액 가능성이 높은 케이스(급행 처리 대상)는 우선적으로 처리됩니다.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-num">Q</div><span>어떤 서류를 준비해야 하나요?</span><div class="faq-chevron">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">진단서, 수술확인서, 입퇴원확인서가 기본입니다. 개인 케이스에 따라 필요 서류가 다를 수 있으며, 상담 후 정확히 안내드립니다. 서류 준비 과정도 함께 도와드립니다.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner reveal">
+  <div class="cta-text">
+    <h2>지금 바로 확인하세요<br>30초면 충분합니다</h2>
+    <p>완전 무료 상담 · 착수금 없음 · 전문가 1:1 안내</p>
+  </div>
+  <a class="cta-btn-dark" href="https://homjts-beep.github.io/-111/" target="_blank">
+    🔍 무료 보험금 진단받기
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-txt">라임손해사정사</div>
+      <div class="footer-desc">
+        독립 손해사정사 · 보험금 전문<br>
+        완전 무료 상담 · 착수금 없음<br><br>
+        카카오 채널 상담 가능
+      </div>
+      <a class="footer-kakao" href="http://pf.kakao.com/_QImIX/chat" target="_blank">💬 카카오 채널 바로가기</a>
+    </div>
+    <div class="footer-links-group">
+      <a href="#why">왜 필요한가</a>
+      <a href="#accident">사고 유형별 안내</a>
+      <a href="#review">실제 후기</a>
+      <a href="#faq">자주 묻는 질문</a>
+      <a href="https://homjts-beep.github.io/-111/" target="_blank">무료 진단 시작</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════ 진단 모달 CSS ══════════════════ -->
+<style>
+/* 오버레이 */
+.mov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;padding:14px;backdrop-filter:blur(8px)}
+.mov.on{display:flex}
+/* 모달 박스 */
+.mbox{background:#111710;border:1px solid rgba(200,241,53,0.15);border-radius:20px;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;padding:28px 24px;position:relative;animation:mUp .3s ease}
+.mbox.red{background:#110e0e;border-color:rgba(255,80,80,0.18)}
+@keyframes mUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.mbox::-webkit-scrollbar{width:3px}
+.mbox::-webkit-scrollbar-thumb{background:#2a3320;border-radius:2px}
+/* 닫기 */
+.mcx{position:absolute;top:16px;right:16px;background:#1e2618;border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;color:#aaa;font-size:16px;line-height:30px;text-align:center;font-family:inherit}
+.mbox.red .mcx{background:#2a1515}
+.mcx:hover{color:#fff}
+/* 배지·제목 */
+.mbadge{display:inline-flex;align-items:center;gap:5px;background:rgba(200,241,53,0.1);border:1px solid rgba(200,241,53,0.25);border-radius:999px;padding:3px 12px;font-size:11px;color:var(--lime);font-weight:700;margin-bottom:10px}
+.mbadge.r{background:rgba(255,80,80,0.1);border-color:rgba(255,80,80,0.3);color:#ff7070}
+.mtitle{font-family:'Gmarket Sans',sans-serif;font-size:20px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:20px}
+.mtitle .mg{color:var(--lime)}
+.mtitle .mr{color:#ff5c5c}
+/* 진행바 */
+.mprog{display:flex;gap:5px;margin-bottom:22px}
+.mpd{flex:1;height:4px;border-radius:2px;background:#1e2618;transition:background .3s}
+.mpd.mdn{background:var(--lime)}
+.mpd.mdn.r{background:#ff5c5c}
+.mpd.mact{background:#86b520}
+.mpd.mact.r{background:#cc3333}
+/* 스텝 */
+.mstep{display:none}
+.mstep.on{display:block;animation:mFi .2s ease}
+@keyframes mFi{from{opacity:0}to{opacity:1}}
+.mlbl{font-size:11px;color:var(--lime);font-weight:700;letter-spacing:.08em;margin-bottom:7px}
+.mlbl.r{color:#ff8080}
+.mq{font-family:'Gmarket Sans',sans-serif;font-size:17px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:16px}
+.mhint{font-size:12px;color:var(--muted);font-weight:400;font-family:'Noto Sans KR',sans-serif}
+/* 옵션 */
+.mopts{display:flex;flex-direction:column;gap:9px}
+.mopt{display:flex;align-items:center;gap:12px;background:#161d10;border:1.5px solid #222e16;border-radius:11px;padding:13px 15px;cursor:pointer;transition:all .2s;user-select:none}
+.mbox.red .mopt{background:#1a1010;border-color:#2e1a1a}
+.mopt:hover{border-color:rgba(200,241,53,0.4);background:#1a2314}
+.mbox.red .mopt:hover{border-color:rgba(255,80,80,0.4);background:#1e1212}
+.mopt.on{border-color:var(--lime);background:#1a2a0a}
+.mbox.red .mopt.on{border-color:#ff5c5c;background:#2a1010}
+.mic{font-size:19px;width:25px;text-align:center;flex-shrink:0}
+.mtx{font-size:14px;color:#ddd;font-weight:500;flex:1;line-height:1.4}
+.mchk{width:19px;height:19px;border-radius:50%;border:2px solid #444;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:#000;transition:all .2s}
+.mchk.sq{border-radius:4px}
+.mopt.on .mchk{border-color:var(--lime);background:var(--lime)}
+.mbox.red .mopt.on .mchk{border-color:#ff5c5c;background:#ff5c5c}
+.mopt.on .mchk::after{content:'✓'}
+/* 다음 버튼 */
+.mnxt{width:100%;margin-top:16px;background:var(--lime);color:var(--dark);border:none;border-radius:11px;padding:14px;font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;font-family:'Noto Sans KR',sans-serif}
+.mnxt:hover{background:#d4f560;transform:translateY(-1px)}
+.mnxt:disabled{background:#2a3320;color:#555;cursor:not-allowed;transform:none}
+.mnxt.r{background:#ff5c5c;color:#fff}
+.mnxt.r:hover{background:#ff7575;transform:translateY(-1px)}
+.mnxt.r:disabled{background:#3a1a1a;color:#664444;cursor:not-allowed;transform:none}
+/* 결과·완료 */
+.mres{display:none}
+.mres.on{display:block;animation:mFi .3s ease}
+.mdone{display:none;text-align:center;padding:16px 0}
+.mdone.on{display:block;animation:mFi .3s ease}
+/* 하이라이트 박스 */
+.mhbox{background:#141e09;border:1px solid rgba(200,241,53,0.2);border-left:4px solid var(--lime);border-radius:9px;padding:14px 16px;margin-bottom:18px}
+.mhbox.r{background:#1a0e0e;border-color:rgba(255,80,80,0.2);border-left-color:#ff5c5c}
+.mhbox p{font-size:13px;color:#c8e09a;line-height:1.7}
+.mhbox.r p{color:#e09a9a}
+.mhbox strong{color:var(--lime);font-weight:800}
+.mhbox.r strong{color:#ff7070}
+/* 폼 */
+.mform{display:flex;flex-direction:column;gap:11px}
+.mflbl{font-size:12px;color:var(--muted);margin-bottom:3px;display:block;font-weight:600}
+.mflbl.r{color:#9a7a7a}
+.mform input{width:100%;background:#161d10;border:1.5px solid #222e16;border-radius:9px;padding:13px 15px;font-size:14px;color:#fff;outline:none;transition:border-color .2s;font-family:'Noto Sans KR',sans-serif}
+.mbox.red .mform input{background:#1a1010;border-color:#2e1a1a}
+.mform input::placeholder{color:#4a5a3a}
+.mbox.red .mform input::placeholder{color:#5a3a3a}
+.mform input:focus{border-color:var(--lime)}
+.mbox.red .mform input:focus{border-color:#ff5c5c}
+.msbtn{width:100%;margin-top:6px;background:var(--lime);color:var(--dark);border:none;border-radius:11px;padding:15px;font-size:14px;font-weight:800;cursor:pointer;transition:all .2s;line-height:1.3;font-family:'Noto Sans KR',sans-serif}
+.msbtn:hover{background:#d4f560;transform:translateY(-1px)}
+.msbtn.r{background:#ff5c5c;color:#fff}
+.msbtn.r:hover{background:#ff7575}
+.mprv{font-size:10px;color:#4a5a3a;text-align:center;margin-top:6px}
+.mprv.r{color:#5a3a3a}
+/* 완료 */
+.mdone-ic{font-size:48px;margin-bottom:14px}
+.mdone-title{font-family:'Gmarket Sans',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+.mdone-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.mkk{display:inline-flex;align-items:center;gap:7px;background:#FEE500;color:#3A1D1D;border-radius:10px;padding:12px 22px;font-weight:800;font-size:14px;text-decoration:none;margin-top:18px;font-family:'Noto Sans KR',sans-serif}
+.mkk:hover{filter:brightness(1.05)}
+</style>
+
+<!-- ══════════════════ 모달 1: 30초 교통사고 무료 진단 ══════════════════ -->
+<div class="mov" id="ov1" onclick="if(event.target.id==='ov1')mClose('ov1')">
+ <div class="mbox" id="mb1">
+  <button class="mcx" onclick="mClose('ov1')">✕</button>
+  <div class="mbadge">⚡ 교통사고 전문 진단</div>
+  <div class="mtitle">30초 교통사고<br><span class="mg">무료 진단 서비스</span></div>
+  <div class="mprog" id="mp1">
+    <div class="mpd mact" id="m1p0"></div>
+    <div class="mpd" id="m1p1"></div>
+    <div class="mpd" id="m1p2"></div>
+    <div class="mpd" id="m1p3"></div>
+    <div class="mpd" id="m1p4"></div>
+  </div>
+  <!-- Step 1 -->
+  <div class="mstep on" id="m1s0">
+    <div class="mlbl">STEP 1 / 5</div>
+    <div class="mq">사고 유형을 선택해 주세요</div>
+    <div class="mopts">
+      <div class="mopt" onclick="m1pick(this,0)"><div class="mic">🚗</div><div class="mtx">차 대 차 사고</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,0)"><div class="mic">🚶</div><div class="mtx">차 대 보행자</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,0)"><div class="mic">🛵</div><div class="mtx">이륜차(오토바이)</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,0)"><div class="mic">🚨</div><div class="mtx" style="color:#ff7070;font-weight:700">12대 중과실 사고<br><span style="font-size:11px;color:#888;font-weight:400">신호위반·음주·스쿨존 등 중과실 해당</span></div><div style="color:#ff5c5c;font-size:15px;font-weight:700">→</div></div>
+      <div class="mopt" onclick="m1pick(this,0)"><div class="mic">❓</div><div class="mtx">기타</div><div class="mchk"></div></div>
+    </div>
+    <button class="mnxt" id="m1n0" disabled onclick="m1step0next()">다음 단계 →</button>
+  </div>
+  <!-- Step 2 -->
+  <div class="mstep" id="m1s1">
+    <div class="mlbl">STEP 2 / 5</div>
+    <div class="mq">부상 부위 및 정도 <span class="mhint">(다중 선택 가능)</span></div>
+    <div class="mopts">
+      <div class="mopt" onclick="m1multi(this,1)"><div class="mic">💆</div><div class="mtx">단순 염좌(목, 허리)</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m1multi(this,1)"><div class="mic">🦴</div><div class="mtx">골절</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m1multi(this,1)"><div class="mic">🏥</div><div class="mtx">수술 필요</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m1multi(this,1)"><div class="mic">📋</div><div class="mtx">장해 진단 예상</div><div class="mchk sq"></div></div>
+    </div>
+    <button class="mnxt" id="m1n1" disabled onclick="m1go(2)">다음 단계 →</button>
+  </div>
+  <!-- Step 3 -->
+  <div class="mstep" id="m1s2">
+    <div class="mlbl">STEP 3 / 5</div>
+    <div class="mq">현재 입원 및 통원 치료 여부</div>
+    <div class="mopts">
+      <div class="mopt" onclick="m1pick(this,2)"><div class="mic">🛏️</div><div class="mtx">입원 중</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,2)"><div class="mic">🚶</div><div class="mtx">통원 중</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,2)"><div class="mic">⏳</div><div class="mtx">치료 전</div><div class="mchk"></div></div>
+    </div>
+    <button class="mnxt" id="m1n2" disabled onclick="m1go(3)">다음 단계 →</button>
+  </div>
+  <!-- Step 4 -->
+  <div class="mstep" id="m1s3">
+    <div class="mlbl">STEP 4 / 5</div>
+    <div class="mq">상대방 보험사 과실 주장</div>
+    <div class="mopts">
+      <div class="mopt" onclick="m1pick(this,3)"><div class="mic">✅</div><div class="mtx">무과실 (100:0)</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,3)"><div class="mic">⚖️</div><div class="mtx">과실 분쟁 중</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,3)"><div class="mic">⚠️</div><div class="mtx">내 과실이 더 큰 상황</div><div class="mchk"></div></div>
+    </div>
+    <button class="mnxt" id="m1n3" disabled onclick="m1go(4)">다음 단계 →</button>
+  </div>
+  <!-- Step 5 -->
+  <div class="mstep" id="m1s4">
+    <div class="mlbl">STEP 5 / 5</div>
+    <div class="mq">직업군 선택 <span class="mhint">(휴업손해 산정용)</span></div>
+    <div class="mopts">
+      <div class="mopt" onclick="m1pick(this,4)"><div class="mic">💼</div><div class="mtx">직장인</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,4)"><div class="mic">🏢</div><div class="mtx">사업자</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,4)"><div class="mic">🏠</div><div class="mtx">주부 · 학생 · 무직</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m1pick(this,4)"><div class="mic">❓</div><div class="mtx">기타</div><div class="mchk"></div></div>
+    </div>
+    <button class="mnxt" id="m1n4" disabled onclick="m1result()">결과 보기 →</button>
+  </div>
+  <!-- 결과 -->
+  <div class="mres" id="m1res">
+    <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(200,241,53,0.12);border:1px solid rgba(200,241,53,0.3);border-radius:999px;padding:4px 12px;font-size:11px;color:var(--lime);font-weight:700;margin-bottom:12px">🔍 진단 완료</div>
+    <div style="font-family:'Gmarket Sans',sans-serif;font-size:19px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:10px">고객님의 사고는 전문가 검토가<br><span style="color:var(--lime)">반드시 필요</span>한 케이스입니다</div>
+    <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px">선택하신 정보 분석 결과, 추가 보상 가능성이 높습니다.</div>
+    <div class="mhbox"><p>고객님의 사고는 <strong>전문적인 합의금 산출</strong>과 <strong>과실 비율 재검토</strong>가 반드시 필요한 케이스로 분류되었습니다.<br><br>보험사 제시 금액을 그대로 수용하실 경우 <strong>수백만 원 이상의 손실</strong>이 발생할 수 있습니다.</p></div>
+    <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">📞 무료 상담 신청</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:16px">전담 손해사정사가 직접 연락드립니다. 착수금 없이 무료로 진행됩니다.</div>
+    <div class="mform">
+      <div><label class="mflbl">이름</label><input type="text" id="m1name" placeholder="홍길동"></div>
+      <div><label class="mflbl">연락처</label><input type="tel" id="m1phone" placeholder="010-0000-0000" oninput="mPhone(this)" maxlength="13"></div>
+      <button class="msbtn" onclick="m1sub()">맞춤 가이드라인 및 무료 상담 신청하기 →</button>
+      <div class="mprv">입력하신 정보는 무료 상담 목적으로만 활용되며, 외부에 제공되지 않습니다.</div>
+    </div>
+  </div>
+  <!-- 완료 -->
+  <div class="mdone" id="m1done">
+    <div class="mdone-ic">✅</div>
+    <div class="mdone-title">상담 신청이 완료되었습니다!</div>
+    <div class="mdone-desc">담당 손해사정사가 <strong style="color:var(--lime)">1 영업일 이내</strong>에 연락드립니다.</div>
+    <a class="mkk" href="http://pf.kakao.com/_QImIX/chat" target="_blank">💬 카카오로 바로 상담하기</a>
+  </div>
+ </div>
+</div>
+
+<!-- ══════════════════ 모달 2: 12대 중과실 사고 무료 진단 ══════════════════ -->
+<div class="mov" id="ov2" onclick="if(event.target.id==='ov2')mClose('ov2')">
+ <div class="mbox red" id="mb2">
+  <button class="mcx" onclick="mClose('ov2')">✕</button>
+  <div class="mbadge r">🚨 12대 중과실 전문 진단</div>
+  <div class="mtitle">12대 중과실 사고<br><span class="mr">무료 진단 서비스</span></div>
+  <div class="mprog" id="mp2">
+    <div class="mpd mact r" id="m2p0"></div>
+    <div class="mpd" id="m2p1"></div>
+    <div class="mpd" id="m2p2"></div>
+    <div class="mpd" id="m2p3"></div>
+    <div class="mpd" id="m2p4"></div>
+  </div>
+  <!-- Step 1 -->
+  <div class="mstep on" id="m2s0">
+    <div class="mlbl r">STEP 1 / 5</div>
+    <div class="mq">사고에서 본인의 역할을 선택해 주세요</div>
+    <div class="mopts">
+      <div class="mopt" onclick="m2pick(this,0)"><div class="mic">🚘</div><div class="mtx"><strong style="color:#ff8080">가해자</strong> — 사고를 낸 운전자 측</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m2pick(this,0)"><div class="mic">🙋</div><div class="mtx"><strong style="color:var(--lime)">피해자</strong> — 사고를 당한 측</div><div class="mchk"></div></div>
+    </div>
+    <button class="mnxt r" id="m2n0" disabled onclick="m2go(1)">다음 단계 →</button>
+  </div>
+  <!-- Step 2 -->
+  <div class="mstep" id="m2s1">
+    <div class="mlbl r">STEP 2 / 5</div>
+    <div class="mq">해당하는 중과실 유형 선택 <span class="mhint">(다중 선택 가능)</span></div>
+    <div class="mopts">
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🚦</div><div class="mtx">신호위반</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">↔️</div><div class="mtx">중앙선 침범</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">💨</div><div class="mtx">제한속도 20km 초과 과속</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🚗</div><div class="mtx">앞지르기·끼어들기 금지 위반</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🚂</div><div class="mtx">철길건널목 통과방법 위반</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🚶</div><div class="mtx">횡단보도 보행자 보호의무 위반</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🪪</div><div class="mtx">무면허 운전</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🍺</div><div class="mtx">음주운전</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">💊</div><div class="mtx">약물복용 운전</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🚧</div><div class="mtx">보도(인도) 침범</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🚪</div><div class="mtx">승객 추락 방지의무 위반</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🏫</div><div class="mtx">어린이 보호구역(스쿨존) 안전의무 위반</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">📦</div><div class="mtx">화물 고정조치 위반</div><div class="mchk sq"></div></div>
+      <div class="mopt" onclick="m2multi(this,1)"><div class="mic">🔘</div><div class="mtx">해당 없음 / 일반 과실 사고</div><div class="mchk sq"></div></div>
+    </div>
+    <button class="mnxt r" id="m2n1" disabled onclick="m2go(2)">다음 단계 →</button>
+  </div>
+  <!-- Step 3 -->
+  <div class="mstep" id="m2s2">
+    <div class="mlbl r">STEP 3 / 5</div>
+    <div class="mq">현재 사건 진행 단계</div>
+    <div class="mopts">
+      <div class="mopt" onclick="m2pick(this,2)"><div class="mic">🔍</div><div class="mtx">경찰 조사 전</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m2pick(this,2)"><div class="mic">📝</div><div class="mtx">조사 완료</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m2pick(this,2)"><div class="mic">⚖️</div><div class="mtx">검찰 송치 상태</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m2pick(this,2)"><div class="mic">🤝</div><div class="mtx">형사 합의 진행 중 / 합의 결렬</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m2pick(this,2)"><div class="mic">💰</div><div class="mtx">보험사 보상금 제시 받음</div><div class="mchk"></div></div>
+    </div>
+    <button class="mnxt r" id="m2n2" disabled onclick="m2go(3)">다음 단계 →</button>
+  </div>
+  <!-- Step 4 -->
+  <div class="mstep" id="m2s3">
+    <div class="mlbl r">STEP 4 / 5</div>
+    <div class="mq">운전자 보험 가입 여부</div>
+    <div class="mopts">
+      <div class="mopt" onclick="m2pick(this,3)"><div class="mic">✅</div><div class="mtx">운전자 보험 있음</div><div class="mchk"></div></div>
+      <div class="mopt" onclick="m2pick(this,3)"><div class="mic">❓</div><div class="mtx">없음 / 잘 모름</div><div class="mchk"></div></div>
+    </div>
+    <button class="mnxt r" id="m2n3" disabled onclick="m2go(4)">다음 단계 →</button>
+  </div>
+  <!-- Step 5 -->
+  <div class="mstep" id="m2s4">
+    <div class="mlbl r">STEP 5 / 5</div>
+    <div class="mq">진단이 완료되었습니다</div>
+    <div class="mhbox r" style="margin-bottom:18px"><p>선택하신 중과실 사고 유형은 <strong>형사처벌 및 민사 합의금</strong>이 동시에 적용될 수 있는 복합 케이스입니다.<br><br>전문가의 조력 없이 진행하시면 <strong>합의금 손실 및 불리한 처우</strong>를 받으실 수 있습니다.</p></div>
+    <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:14px">지금 바로 연락처를 남겨주시면,<br>무료 상담을 도와드리겠습니다.</div>
+    <div class="mform">
+      <div><label class="mflbl r">이름</label><input type="text" id="m2name" placeholder="홍길동"></div>
+      <div><label class="mflbl r">연락처</label><input type="tel" id="m2phone" placeholder="010-0000-0000" oninput="mPhone(this)" maxlength="13"></div>
+      <button class="msbtn r" onclick="m2sub()">🚨 1:1 긴급 무료 상담 신청하기</button>
+      <div class="mprv r">입력하신 정보는 무료 상담 목적으로만 활용되며, 외부에 제공되지 않습니다.</div>
+    </div>
+  </div>
+  <!-- 완료 -->
+  <div class="mdone" id="m2done">
+    <div class="mdone-ic">✅</div>
+    <div class="mdone-title">긴급 상담 신청 완료!</div>
+    <div class="mdone-desc" style="color:#9a8080">담당 손해사정사가 <strong style="color:#ff7070">1 영업일 이내</strong>에 연락드립니다.<br>급하신 경우 카카오 채널을 이용해 주세요.</div>
+    <a class="mkk" href="http://pf.kakao.com/_QImIX/chat" target="_blank">💬 카카오로 바로 상담하기</a>
+  </div>
+ </div>
+</div>
+
+<!-- ══════════════════ 진단 모달 JS ══════════════════ -->
+<script>
+// 공통
+function mOpen(id){document.getElementById(id).classList.add('on');document.body.style.overflow='hidden'}
+function mClose(id){document.getElementById(id).classList.remove('on');document.body.style.overflow=''}
+function mPhone(el){let v=el.value.replace(/\D/g,'');if(v.length<=3)el.value=v;else if(v.length<=7)el.value=v.slice(0,3)+'-'+v.slice(3);else el.value=v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7,11)}
+
+// 모달1 - 교통사고
+function m1pick(el,i){el.closest('.mopts').querySelectorAll('.mopt').forEach(o=>o.classList.remove('on'));el.classList.add('on');document.getElementById('m1n'+i).disabled=false}
+function m1multi(el,i){el.classList.toggle('on');document.getElementById('m1n'+i).disabled=el.closest('.mopts').querySelectorAll('.mopt.on').length===0}
+function m1step0next(){
+  // 12대 중과실 선택했으면 ov2로 전환
+  const sel=document.querySelector('#m1s0 .mopt.on');
+  if(sel&&sel.querySelector('.mic').textContent==='🚨'){mClose('ov1');setTimeout(()=>mOpen('ov2'),200);return}
+  m1go(1)
+}
+function m1go(to){
+  document.getElementById('m1s'+(to-1)).classList.remove('on');
+  document.getElementById('m1s'+to).classList.add('on');
+  document.getElementById('m1p'+(to-1)).className='mpd mdn';
+  document.getElementById('m1p'+to).className='mpd mact';
+  document.getElementById('mb1').scrollTop=0
+}
+function m1result(){
+  document.getElementById('m1s4').classList.remove('on');
+  document.getElementById('m1p4').className='mpd mdn';
+  document.getElementById('mp1').style.display='none';
+  document.getElementById('m1res').classList.add('on');
+  document.getElementById('mb1').scrollTop=0
+}
+function m1sub(){
+  if(!document.getElementById('m1name').value.trim()){alert('이름을 입력해 주세요');return}
+  if(document.getElementById('m1phone').value.length<12){alert('연락처를 정확히 입력해 주세요');return}
+  document.getElementById('m1res').classList.remove('on');
+  document.getElementById('m1done').classList.add('on');
+  document.getElementById('mb1').scrollTop=0
+}
+
+// 모달2 - 12대 중과실
+function m2pick(el,i){el.closest('.mopts').querySelectorAll('.mopt').forEach(o=>o.classList.remove('on'));el.classList.add('on');document.getElementById('m2n'+i).disabled=false}
+function m2multi(el,i){el.classList.toggle('on');document.getElementById('m2n'+i).disabled=el.closest('.mopts').querySelectorAll('.mopt.on').length===0}
+function m2go(to){
+  document.getElementById('m2s'+(to-1)).classList.remove('on');
+  document.getElementById('m2s'+to).classList.add('on');
+  document.getElementById('m2p'+(to-1)).className='mpd mdn r';
+  if(to<5)document.getElementById('m2p'+to).className='mpd mact r';
+  document.getElementById('mb2').scrollTop=0
+}
+function m2sub(){
+  if(!document.getElementById('m2name').value.trim()){alert('이름을 입력해 주세요');return}
+  if(document.getElementById('m2phone').value.length<12){alert('연락처를 정확히 입력해 주세요');return}
+  document.getElementById('m2s4').classList.remove('on');
+  document.getElementById('mp2').style.display='none';
+  document.getElementById('m2done').classList.add('on');
+  document.getElementById('mb2').scrollTop=0
+}
+</script>
+
+<script>
+// Tab
+function showTab(id, btn) {
+  document.querySelectorAll('.accident-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// FAQ
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    el.classList.add('open');
+    el.querySelector('.faq-a').style.maxHeight = '300px';
+  }
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
